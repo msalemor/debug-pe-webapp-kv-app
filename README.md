@@ -21,14 +21,22 @@ Debugging an Azure Web App with Azure Key Vault both with Private Endpoints
 
 ## Verify Private DNS Zones
 
-## Verify Connectivity to WebApp
+## Verify Networking settings
+
+- The Private Endpoint should show up under ```Private endpoint connections```
+- There should be no whitelisted IPs if you have selected networks
+
+## Verify Connectivity to WebApp via Private Endpoint
 
 - From the VM in Azure run:
-- ```Test-NetConnection -Port 443 {webappname}.azurewebsites.net```
+- ```Test-NetConnection -Port 443 pedemoapi.azurewebsites.net```
 - Expected Response:
 - 
 
-### Web App Connectivy
+### Verify Connectionvity to the Key Vault via private Endpoint
 
 
-
+- From the VM in Azure run:
+- ```Test-NetConnection -Port 443 kv-pedemodemo-eus.vault.azure.net```
+- Expected Response:
+- 
